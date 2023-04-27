@@ -7,14 +7,18 @@ const subjectSchema = new mongoose.Schema({
         unique: true,
     },
     articles: [{
-        title:{
+        title: {
             type: String,
             required: true,
         },
-        description:{
+        description: {
             type: String,
             required: true,
-        }
+        }, 
+        createdAt: {
+            type: Date,
+            default: Date.now
+        },
     }],
     pdf: {
         type: String
